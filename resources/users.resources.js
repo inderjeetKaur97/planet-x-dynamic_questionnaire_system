@@ -19,7 +19,7 @@ const findUserByEmail = async (email) => {
   try {
     let userFound = await UserSchema.findOne({ email })
     if (userFound)
-      return true
+      return { ...userFound._doc }
     return false
   } catch (error) {
     console.log("userResource@findUserByEmail", error)
