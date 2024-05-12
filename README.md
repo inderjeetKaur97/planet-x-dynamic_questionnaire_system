@@ -28,6 +28,7 @@ steps to install the git repo
 <li>helpers - has modular function like generate auth token and response handler class.</li>
 <li>middleware - has auth middleware used in questionnaire apis</li>
 <li>models - has mongodb collection schema written with mongoose library</li>
+ <li> mongodb_collection- has json sample collection data. import it locally .</li>
 <li>resources - has function to read/write into databse collection</li>
 <li>routes - has user and questionnaire route modules</li>
 <li>validation - has joi validation functions used as middleware in apis</li>
