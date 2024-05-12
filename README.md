@@ -7,5 +7,5 @@ This is a backend developed on node.js and express framework for the project . T
 steps to install the git repo
 <ol>
 <li>git clone ["git-http-utl](https://github.com/inderjeetKaur97/planet-x-dynamic_questionnaire_system.git)</li>
-2 - npm install //node_modules
+<li>npm install //node_modules</li>
 </ol>
