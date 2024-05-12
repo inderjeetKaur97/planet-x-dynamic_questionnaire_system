@@ -9,13 +9,11 @@ var UserSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: true
-
   },
   email: {
     type: String,
     trim: true,
-    validate: true,
-    match: [/.+\@.+\..+/, 'Please fill a valid email address']
+    required: true
   },
   password: {
     type: String,

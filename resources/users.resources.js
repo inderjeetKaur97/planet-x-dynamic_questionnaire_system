@@ -14,6 +14,19 @@ const createUser = async (firstName, lastName, email, password, role) => {
     return false
   }
 }
+const findUserByEmail = async (email) => {
+  console.log("userResource@findUserByEmail")
+  try {
+    let userFound = await UserSchema.findOne({ email })
+    if (userFound)
+      return true
+    return false
+  } catch (error) {
+    console.log("userResource@findUserByEmail", error)
+    return false
+  }
+}
 module.exports = {
-  createUser
+  createUser,
+  findUserByEmail
 }

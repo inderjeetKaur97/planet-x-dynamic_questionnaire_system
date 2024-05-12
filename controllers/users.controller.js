@@ -4,15 +4,18 @@ const userValidator = require('../validation/users.validation')
 const createUser = async (req, res, next) => {
   console.log("userController@createUser")
   let { firstName, lastName, email, password, role } = req.body
-  let hashPassword = await bcrypt.hash(password, 10)
   try {
-    let userCreated = await userResources.createUser(firstName, lastName, email, hashPassword, role)
+    let userAlreadyExist = await userResources.findUserByEmail(email)
+    if (userAlreadyExist) {
+      return ResponseHandler.badRequest(res, false, 'User Already Exist with email.');
+    }
+    let userCreated = await userResources.createUser(firstName, lastName, email, password, role)
     if (userCreated)
-      return ResponseHandler.success(res, 'User Created Successfully', userCreated);
-    return ResponseHandler.internalServerError(res, null, null);
+      return ResponseHandler.success(res, userCreated, 'User Created Successfully');
+    return ResponseHandler.internalServerError(res, null);
   } catch (error) {
     console.log("userController@createUser", error)
-    return ResponseHandler.internalServerError(res, null, null);
+    return ResponseHandler.internalServerError(res, null);
   }
 }
 module.exports = {
