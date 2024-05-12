@@ -7,14 +7,54 @@ const generateAuthToken = require('../helpers/generateAuthToken')
 
 const createQuestionnaire = async (req, res, next) => {
   console.log("questionnaireController@createQuestionnaire")
-  let { title, description } = req.body
+  let { title, description, questions } = req.body
   try {
-    let created = await questionnaireResources.createQuestionnaire(title, description)
+    let created = await questionnaireResources.createQuestionnaire(title, description, questions)
     if (created)
       return ResponseHandler.success(res, created, 'questionnaire Created Successfully.');
     return ResponseHandler.internalServerError(res, null);
   } catch (error) {
     console.log("questionnaireController@createQuestionnaire", error)
+    return ResponseHandler.internalServerError(res, null);
+  }
+}
+const submitQuestionnaire = async (req, res, next) => {
+  console.log("questionnaireController@submitQuestionnaire")
+  let { questionnaireId, questionnaireData } = req.body
+  let userId = req.user._id
+  try {
+    let submitted = await questionnaireResources.submitQuestionnaire(questionnaireId, userId, questionnaireData)
+    if (submitted)
+      return ResponseHandler.success(res, submitted, 'questionnaire submitted Successfully.');
+    return ResponseHandler.internalServerError(res, null);
+  } catch (error) {
+    console.log("questionnaireController@createQuestionnaire", error)
+    return ResponseHandler.internalServerError(res, null);
+  }
+}
+const getAnalytics = async (req, res, next) => {
+  console.log("questionnaireController@getAnalytics")
+  let { questionnaireId, userId, isSubmitted } = req.body
+  try {
+    let fetchAnalytics = await questionnaireResources.getAnalytics(questionnaireId, userId, isSubmitted)
+    if (fetchAnalytics)
+      return ResponseHandler.success(res, { count: fetchAnalytics }, 'questionnaire analytics fetched Successfully.');
+    return ResponseHandler.internalServerError(res, null);
+  } catch (error) {
+    console.log("questionnaireController@getAnalytics", error)
+    return ResponseHandler.internalServerError(res, null);
+  }
+}
+const getQuestionnaire = async (req, res, next) => {
+  console.log("questionnaireController@getQuestionnaire")
+  let questionnaireId = req.query.questionnaireId
+  try {
+    let fetchQuestionnaire = await questionnaireResources.getQuestionnaire(questionnaireId)
+    if (fetchQuestionnaire)
+      return ResponseHandler.success(res, fetchQuestionnaire, 'questionnaire fetched Successfully.');
+    return ResponseHandler.notFound(res, null);
+  } catch (error) {
+    console.log("questionnaireController@getQuestionnaire", error)
     return ResponseHandler.internalServerError(res, null);
   }
 }
@@ -33,12 +73,12 @@ const createFieldMetaData = async (req, res, next) => {
 }
 const getFieldMetaData = async (req, res, next) => {
   console.log("questionnaireController@getFieldMetaData")
-  let { title, description } = req.body
+  let type = req.query.type
   try {
-    let created = await questionnaireResources.getFieldMetaData(title, description)
-    if (created)
-      return ResponseHandler.success(res, created, 'questionnaire Created Successfully.');
-    return ResponseHandler.internalServerError(res, null);
+    let fetchInfo = await questionnaireResources.getFieldMetaData(type)
+    if (fetchInfo)
+      return ResponseHandler.success(res, fetchInfo, 'Field meta info fetched Successfully.');
+    return ResponseHandler.notFound(res, null);
   } catch (error) {
     console.log("questionnaireController@getFieldMetaData", error)
     return ResponseHandler.internalServerError(res, null);
@@ -47,5 +87,8 @@ const getFieldMetaData = async (req, res, next) => {
 module.exports = {
   createQuestionnaire,
   getFieldMetaData,
-  createFieldMetaData
+  createFieldMetaData,
+  submitQuestionnaire,
+  getQuestionnaire,
+  getAnalytics
 }

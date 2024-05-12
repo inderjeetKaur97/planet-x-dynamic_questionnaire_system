@@ -1,13 +1,16 @@
 const mongoose = require('mongoose')
 var questonnaireLogsSchema = new mongoose.Schema({
-  questionnaire_id: {
-    type: Schema.Types.ObjectId,
-    ref: 'questionnaire'
+  questionnaireId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'questionnaire',
+    required: true
   },
-  viewed_by: {
-    type: Schema.Types.ObjectId,
-    ref: 'users'
+  viewedBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'users',
+    required: true
   },
+  isSubmitted: { type: Boolean, required: true },
   updatedAt: {
     type: Date,
     default: Date.now
@@ -18,5 +21,5 @@ var questonnaireLogsSchema = new mongoose.Schema({
   }
 });
 
-const questionnaireLogs = new mongoose.model('questionnaire_logs', questonnaireLogs)
+const questionnaireLogs = new mongoose.model('questionnaire_logs', questonnaireLogsSchema)
 module.exports = questionnaireLogs

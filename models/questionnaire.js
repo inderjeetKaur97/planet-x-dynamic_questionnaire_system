@@ -10,6 +10,23 @@ var questionnaireSchema = new mongoose.Schema({
     trim: true,
     required: true
   },
+  questions:
+    [{
+      questionMetaData:
+      {
+        answerType: { type: String, required: true },
+        buttonType: String,
+        dataType: String,
+        validation: [{
+          label: String,
+          key: String,
+          value: Number,
+          _id: mongoose.Schema.Types.ObjectId
+        }],
+        options: [{ type: String }]
+      },
+      questionText: { type: String, required: true }
+    }],
   updatedAt: {
     type: Date,
     default: Date.now

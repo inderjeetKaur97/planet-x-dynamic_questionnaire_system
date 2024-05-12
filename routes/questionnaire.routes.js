@@ -6,9 +6,9 @@ const router = express.Router()
 
 router.post('/create-questionnaire', auth.adminAuth, validation.createQuestionnaireSchema, questionnaireController.createQuestionnaire)
 router.post('/create-field-meta-data', auth.adminAuth, validation.createFieldMetaDataSchema, questionnaireController.createFieldMetaData)
-// router.post('/get-field-data', auth.adminAuth, validation.createQuestionnaireSchema, questionnaireController.createQuestionnaire)
-
-
-// router.post('/login', validation.loginUserSchema, userController.loginUser)
+router.get('/get-field-meta-data', auth.adminAuth, questionnaireController.getFieldMetaData)
+router.get('/get-questionnaire', auth.userAuth, questionnaireController.getQuestionnaire)
+router.post('/submit-questionnaire', auth.userAuth, questionnaireController.submitQuestionnaire)
+router.post('/get-analytics', auth.adminAuth, validation.getAnalytics, questionnaireController.getAnalytics)
 
 module.exports = router

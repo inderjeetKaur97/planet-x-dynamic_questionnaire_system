@@ -8,7 +8,11 @@ const createQuestionnaireSchema = (req, res, next) => {
   let reqSchema = req.body
   let joiSchema = Joi.object({
     title: Joi.string().required(),
-    description: Joi.string().required()
+    description: Joi.string().required(),
+    questions: Joi.array().items(Joi.object({
+      questionMetaData: Joi.object().required(),
+      questionText: Joi.string().required()
+    })).min(1).required()
   })
   let { error } = joiSchema.validate(reqSchema)
   if (error)
@@ -37,8 +41,23 @@ const createFieldMetaDataSchema = (req, res, next) => {
     return next()
   }
 }
-
+const getAnalytics = (req, res, next) => {
+  console.log("questionnaireValidation@getAnalytics")
+  let reqSchema = req.body
+  let joiSchema = Joi.object({
+    questionnaireId: Joi.string().required(),
+    userId: Joi.string(),
+    isSubmitted: Joi.boolean()
+  })
+  let { error } = joiSchema.validate(reqSchema)
+  if (error)
+    return ResponseHandler.badRequest(res, error.details[0].message);
+  else {
+    return next()
+  }
+}
 module.exports = {
   createQuestionnaireSchema,
-  createFieldMetaDataSchema
+  createFieldMetaDataSchema,
+  getAnalytics
 }

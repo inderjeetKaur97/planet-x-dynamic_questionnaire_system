@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
 var usersQuestionnaireDataSchema = new mongoose.Schema({
-  questionnaire_id: {
-    type: Schema.Types.ObjectId,
+  questionnaireId: {
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'questionnaire'
   },
-  user_id: {
-    type: Schema.Types.ObjectId,
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'users'
   },
-  questionnaire_data: { type: String, required: true },
+  questionnaireData: { type: String, required: true },
   updatedAt: {
     type: Date,
     default: Date.now

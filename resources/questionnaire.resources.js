@@ -1,9 +1,12 @@
 const questionnaireSchema = require('../models/questionnaire')
 const fieldsMetaDataSchema = require('../models/fieldsMetaData')
-const createQuestionnaire = async (title, description) => {
+const usersQuestionnaireDataSchema = require('../models/usersQuestionnaireData')
+const questonnaireLogsSchema = require('../models/questonnaireLogs')
+const createQuestionnaire = async (title, description, questions) => {
   console.log("questionnaireResource@createQuestionnaire")
   try {
-    let questionnaireData = await questionnaireSchema.findOneAndUpdate({ title }, { title, description })
+    let questionnaireData = new questionnaireSchema({ title, description, questions })
+    questionnaireData.save()
     if (questionnaireData)
       return questionnaireData
     return false
@@ -12,15 +15,65 @@ const createQuestionnaire = async (title, description) => {
     return false
   }
 }
-const getFieldMetaData = async (title, description) => {
-  console.log("questionnaireResource@getFieldMetaData")
+const submitQuestionnaire = async (questionnaireId, userId, questionnaireData) => {
+  console.log("questionnaireResource@submitQuestionnaire")
   try {
-    let questionnaireData = await questionnaireSchema.findOneAndUpdate({ title }, { title, description })
-    if (questionnaireData)
-      return questionnaireData
+    let questionsString = JSON.stringify(questionnaireData)
+    let addLogs
+    let submittedQuestionnaire = await usersQuestionnaireDataSchema.findOneAndUpdate({
+      questionnaireId, userId
+    }, { questionnaireId, userId, questionnaireData: questionsString }, { upsert: true })
+    if (submittedQuestionnaire) {
+      addLogs = new questonnaireLogsSchema({
+        questionnaireId,
+        viewedBy: userId,
+        isSubmitted: true
+      })
+      addLogs.save()
+    }
+    else
+      return false
+    if (addLogs)
+      return submittedQuestionnaire
     return false
   } catch (error) {
-    console.log("questionnaireResource@getFieldMetaData", error)
+    console.log("questionnaireResource@submitQuestionnaire", error)
+    return false
+  }
+}
+const getAnalytics = async (questionnaireId, userId = null, isSubmitted = false) => {
+  console.log("questionnaireResource@getAnalytics")
+  try {
+    let fetchQuery = { questionnaireId }
+    if (userId)
+      fetchQuery = { ...fetchQuery, viewedBy: userId }
+    if (isSubmitted)
+      fetchQuery = { ...fetchQuery, isSubmitted }
+    let fetchAnalytics = await questonnaireLogsSchema.countDocuments(fetchQuery)
+    if (fetchAnalytics)
+      return fetchAnalytics
+    return false
+  } catch (error) {
+    console.log("questionnaireResource@getAnalytics", error)
+    return false
+  }
+}
+const getQuestionnaire = async (questionnaireId) => {
+  console.log("questionnaireResource@getQuestionnaire")
+  try {
+    let fetchQuestionnaire
+    if (questionnaireId)
+      fetchQuestionnaire = await questionnaireSchema.findById({
+        _id:
+          questionnaireId
+      })
+    else
+      fetchQuestionnaire = await questionnaireSchema.find()
+    if (fetchQuestionnaire)
+      return fetchQuestionnaire
+    return false
+  } catch (error) {
+    console.log("questionnaireResource@getQuestionnaire", error)
     return false
   }
 }
@@ -37,8 +90,23 @@ const createFieldMetaData = async (type, validation, minOptionsCount) => {
     return false
   }
 }
+const getFieldMetaData = async (type) => {
+  console.log("questionnaireResource@getFieldMetaData")
+  try {
+    let questionnaireData = await fieldsMetaDataSchema.find({ type }, null, { sort: { updatedAt: -1 } })
+    if (questionnaireData && questionnaireData.length)
+      return questionnaireData[0]
+    return false
+  } catch (error) {
+    console.log("questionnaireResource@getFieldMetaData", error)
+    return false
+  }
+}
 module.exports = {
   createQuestionnaire,
   createFieldMetaData,
-  getFieldMetaData
+  getFieldMetaData,
+  submitQuestionnaire,
+  getQuestionnaire,
+  getAnalytics
 }
