@@ -15,6 +15,22 @@ steps to install the git repo
 <h5>Postman collection documentaion URL - </h5>
 <a href="https://documenter.getpostman.com/view/32959700/2sA3JNa11Z">https://documenter.getpostman.com/view/32959700/2sA3JNa11Z</a>
 
+<h4><strong>Project Folder Structure</strong> </h4>
+<p>Following are the project repos</p>
+<ol>
+<li>config - has env variables(to be used directly as variables) and db configuration file</li>
+<li>controller - has controller function for user and questionnaire module</li>
+<li>helpers - has modular function like generate auth token and response handler class.</li>
+<li>middleware - has auth middleware used in questionnaire apis</li>
+<li>models - has mongodb collection schema written with mongoose library</li>
+<li>resources - has function to read/write into databse collection</li>
+<li>routes - has user and questionnaire route modules</li>
+<li>validation - has joi validation functions used as middleware in apis</li>
+<li>.gitignore - has has node modules in gitignore. .env is added to repo as it is a sample project</li>
+<li>app.js - has the app logic in the file</li>
+<li>server.js - has server and port logic in the file</li>
+
+
 <h4><strong>Project Flow</strong> </h4>
 <ol>
 <li>The project user authentication and role authorisation for admin and user</li>
@@ -23,6 +39,6 @@ steps to install the git repo
 <li>Frontend can fetch these properties and can show what validation admin wants to add/li>
 <li>Admin can add those validations to the questionnaire and create it/li>
 <li>User are then allowed to submit questionnaire/li>
-<li>Admin can view analytics like , total views , total submissions , total views by a particular user etc</li>/li>
+<li>Admin can view analytics like , total views , total submissions , total views by a particular user etc</li>
 </ol>
 
