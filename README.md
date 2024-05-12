@@ -51,5 +51,5 @@ steps to install the git repo
 <h4>My Journey with the project</h4>
 <p>I really like developing the project . This was a simple yet commanly used task where user wants to create on the go forms. This system can be used in that. The challanges I face in the project include How to make the project more scalable. I wanted to create the collection of database in such a way that it can handle different validations in future as well. </p>
 <p>The projects Backend was done in a manageable timeline.But could not develop front end in the time frame. I could have deployed the backend on any AWS or any other server if credential was provided. </p>
-<p>Apart from above he project was fun to do . I have made the project scalable and the project structure moduler for further addition</p>
+<p>Apart from above he project was fun to do .Have implenated various libraries in the project for it to be modular and understanble for new developer. The project is scalable and the project structure is moduler for further addition</p>
 
