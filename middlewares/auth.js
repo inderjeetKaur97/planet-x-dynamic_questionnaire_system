@@ -31,7 +31,7 @@ const userAuth = async (req, res, next) => {
     let userFound = await userResources.findUserByEmail(decoded.email)
     if (!userFound)
       return ResponseHandler.unauthorized(res, null);
-    if (userFound.role !== "user")
+    if (userFound.role !== "user" && userFound.role !== "admin")
       return ResponseHandler.unauthorized(res, null);
     req.user = decoded
     return next()
@@ -40,7 +40,6 @@ const userAuth = async (req, res, next) => {
     return ResponseHandler.unauthorized(res, null);
   }
 }
-
 module.exports = {
   adminAuth,
   userAuth
