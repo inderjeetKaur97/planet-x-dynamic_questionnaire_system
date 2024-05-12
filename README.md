@@ -2,6 +2,10 @@
 
 <h3>Description</h3> 
 This is a backend developed on node.js and express framework for the project . The system designs a questionnaire with different validations and condtitions. The questionnare generated can then be rendered by frontend based on validation provided in the questions and then can be taken by end users and be submitted .
+Server - Node.js
+Language - Javascript
+Framework - express.js
+Data base - MongoDB
 
 <h4><strong>How to Install and Run the Project</strong> </h4>
 steps to install the git repo
@@ -16,7 +20,7 @@ steps to install the git repo
 <a href="https://documenter.getpostman.com/view/32959700/2sA3JNa11Z">https://documenter.getpostman.com/view/32959700/2sA3JNa11Z</a>
 
 <h4><strong>Project Folder Structure</strong> </h4>
-<p>Following are the project repos</p>
+<p>Following are the project modules</p>
 <ol>
 <li>config - has env variables(to be used directly as variables) and db configuration file</li>
 <li>controller - has controller function for user and questionnaire module</li>
@@ -29,7 +33,7 @@ steps to install the git repo
 <li>.gitignore - has has node modules in gitignore. .env is added to repo as it is a sample project</li>
 <li>app.js - has the app logic in the file</li>
 <li>server.js - has server and port logic in the file</li>
-
+</ol>
 
 <h4><strong>Project Flow</strong> </h4>
 <ol>
