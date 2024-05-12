@@ -2,10 +2,11 @@
 
 <h3>Description</h3> 
 This is a backend developed on node.js and express framework for the project . The system designs a questionnaire with different validations and condtitions. The questionnare generated can then be rendered by frontend based on validation provided in the questions and then can be taken by end users and be submitted .
-Server - Node.js
-Language - Javascript
-Framework - express.js
-Data base - MongoDB
+
+<li>Server - Node.js</li>
+<li>Language - Javascript</li>
+<li>Framework - express.js</li>
+<li>Data base - MongoDB</li>
 
 <h4><strong>How to Install and Run the Project</strong> </h4>
 steps to install the git repo
