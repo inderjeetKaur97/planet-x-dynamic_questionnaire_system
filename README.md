@@ -13,4 +13,4 @@ steps to install the git repo
 <h4><strong>How to use the project </strong> </h4>
 <p>Below is the api documentation url for the project . The documentation is written with all request , response and other parameters</p>
 <h5>Postman collection documentaion URL </h5>
-<a>https://documenter.getpostman.com/view/32959700/2sA3JNa11Z</a>
+<a url="https://documenter.getpostman.com/view/32959700/2sA3JNa11Z">https://documenter.getpostman.com/view/32959700/2sA3JNa11Z</a>
