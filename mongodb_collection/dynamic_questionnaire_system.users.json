@@ -1,0 +1,85 @@
+[{
+  "_id": {
+    "$oid": "664065f0dc5ee3d8a9709506"
+  },
+  "firstName": "planet x",
+  "lastName": "admin 1",
+  "email": "planet_x_admin_1@yopmail.com",
+  "password": "$2b$10$EulHVmKv4rnmbwMNY/shzuZGBJAA0CNWP53ZVVMXjPmygiYE49P3u",
+  "role": "admin",
+  "updatedAt": {
+    "$date": "2024-05-12T06:47:12.328Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T06:47:12.329Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "664066627b982e68b03c6244"
+  },
+  "firstName": "planet x",
+  "lastName": "admin 2",
+  "email": "planet_x_admin_2@yopmail.com",
+  "password": "$2b$10$dXzMRwWw0KbtfyqZ9Wx3/e5PsnFH/2WAogDf..InJYqleEn4oHh2C",
+  "role": "admin",
+  "updatedAt": {
+    "$date": "2024-05-12T06:49:06.665Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T06:49:06.665Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66407472a55dbb8a3220a421"
+  },
+  "firstName": "student",
+  "lastName": "user 1",
+  "email": "student_user_1@yopmail.com",
+  "password": "$2b$10$KiMszl3YyUi2X2ZZjqWoWOs5pT0hno43OC2vtNYD6vzW6j6IUyKS.",
+  "role": "user",
+  "updatedAt": {
+    "$date": "2024-05-12T07:49:06.080Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T07:49:06.080Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6640d58f88ebbe2695aedfbb"
+  },
+  "firstName": "student",
+  "lastName": "user 2",
+  "email": "student_user_2@yopmail.com",
+  "password": "$2b$10$jHA6R1VsFqVfTteKIbBQGO50D5erzs7RKTD0e5SsTTxbrcutDeu46",
+  "role": "user",
+  "updatedAt": {
+    "$date": "2024-05-12T14:43:27.807Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T14:43:27.807Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6640d9122f25db5929af56f5"
+  },
+  "firstName": "student",
+  "lastName": "user 2",
+  "email": "student_user_3@yopmail.com",
+  "password": "$2b$10$jgF506umJdg7OWr.LHfRauUJeLk7qYGPtt.1E3iMwJe.1U7yIyAde",
+  "role": "user",
+  "updatedAt": {
+    "$date": "2024-05-12T14:58:26.033Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T14:58:26.033Z"
+  },
+  "__v": 0
+}]

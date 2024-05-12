@@ -21,6 +21,23 @@ const createQuestionnaireSchema = (req, res, next) => {
     return next()
   }
 }
+const submitQuestionnaireSchema = (req, res, next) => {
+  console.log("questionnaireValidation@submitQuestionnaireSchema")
+  let reqSchema = req.body
+  let joiSchema = Joi.object({
+    questionnaireId: Joi.string().required(),
+    questionnaireData: Joi.array().items(Joi.object({
+      questionText: Joi.string().required(),
+      answerText: Joi.array().required()
+    })).min(1).required()
+  })
+  let { error } = joiSchema.validate(reqSchema)
+  if (error)
+    return ResponseHandler.badRequest(res, error.details[0].message);
+  else {
+    return next()
+  }
+}
 const createFieldMetaDataSchema = (req, res, next) => {
   console.log("questionnaireValidation@createFieldMetaDataSchema")
   let reqSchema = req.body
@@ -59,5 +76,6 @@ const getAnalytics = (req, res, next) => {
 module.exports = {
   createQuestionnaireSchema,
   createFieldMetaDataSchema,
+  submitQuestionnaireSchema,
   getAnalytics
 }

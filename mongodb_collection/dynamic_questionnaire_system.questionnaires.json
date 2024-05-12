@@ -1,0 +1,253 @@
+[{
+  "_id": {
+    "$oid": "6640cdf9e992dcaf7a08ec53"
+  },
+  "title": "student survey",
+  "description": "students of school paradise public school will be taking this survey.",
+  "questions": [
+    {
+      "questionMetaData": {
+        "answerType": "description",
+        "dataType": "String",
+        "is_required": true,
+        "validation": [
+          {
+            "label": "min characters",
+            "key": "min_length",
+            "value": 2,
+            "_id": {
+              "$oid": "6640a1890c82e4b0ecba58c5"
+            }
+          },
+          {
+            "label": "max characters",
+            "key": "max_length",
+            "value": 10,
+            "_id": {
+              "$oid": "6640a1890c82e4b0ecba58c6"
+            }
+          },
+          {
+            "label": "is email field",
+            "key": "is_email_field",
+            "value": 0,
+            "_id": {
+              "$oid": "6640a1890c82e4b0ecba58c7"
+            }
+          }
+        ],
+        "options": []
+      },
+      "questionText": "What is your name?",
+      "_id": {
+        "$oid": "6640cdf9e992dcaf7a08ec54"
+      }
+    },
+    {
+      "questionMetaData": {
+        "answerType": "description",
+        "dataType": "Number",
+        "is_required": true,
+        "validation": [
+          {
+            "label": "min limit",
+            "key": "min_limit",
+            "value": 1,
+            "_id": {
+              "$oid": "6640a2090c82e4b0ecba58cb"
+            }
+          },
+          {
+            "label": "max limit",
+            "key": "max_limit",
+            "value": 12,
+            "_id": {
+              "$oid": "6640a2090c82e4b0ecba58cc"
+            }
+          }
+        ],
+        "options": []
+      },
+      "questionText": "What is your class?",
+      "_id": {
+        "$oid": "6640cdf9e992dcaf7a08ec55"
+      }
+    },
+    {
+      "questionMetaData": {
+        "answerType": "mcq",
+        "buttonType": "checkbox",
+        "is_required": true,
+        "options": [
+          "Maths",
+          "English",
+          "Science",
+          "Hindi",
+          "Sanskrit",
+          "Gujarati",
+          "German",
+          "Social studies"
+        ],
+        "validation": []
+      },
+      "questionText": "What are your subjects?",
+      "_id": {
+        "$oid": "6640cdf9e992dcaf7a08ec56"
+      }
+    },
+    {
+      "questionMetaData": {
+        "answerType": "description",
+        "dataType": "Number",
+        "is_required": false,
+        "validation": [
+          {
+            "label": "is phone number",
+            "key": "is_phone_field",
+            "value": 1,
+            "_id": {
+              "$oid": "6640a2090c82e4b0ecba58cd"
+            }
+          }
+        ],
+        "options": []
+      },
+      "questionText": "What is your parents phone number?",
+      "_id": {
+        "$oid": "6640cdf9e992dcaf7a08ec57"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2024-05-12T14:11:05.930Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T14:11:05.930Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6640da252f25db5929af570f"
+  },
+  "title": "hospital survey",
+  "description": "zydus hospital",
+  "questions": [
+    {
+      "questionMetaData": {
+        "answerType": "description",
+        "dataType": "String",
+        "is_required": true,
+        "validation": [
+          {
+            "label": "min characters",
+            "key": "min_length",
+            "value": 2,
+            "_id": {
+              "$oid": "6640a1890c82e4b0ecba58c5"
+            }
+          },
+          {
+            "label": "max characters",
+            "key": "max_length",
+            "value": 10,
+            "_id": {
+              "$oid": "6640a1890c82e4b0ecba58c6"
+            }
+          },
+          {
+            "label": "is email field",
+            "key": "is_email_field",
+            "value": 0,
+            "_id": {
+              "$oid": "6640a1890c82e4b0ecba58c7"
+            }
+          }
+        ],
+        "options": []
+      },
+      "questionText": "What is your name?",
+      "_id": {
+        "$oid": "6640da252f25db5929af5710"
+      }
+    },
+    {
+      "questionMetaData": {
+        "answerType": "description",
+        "dataType": "Number",
+        "is_required": true,
+        "validation": [
+          {
+            "label": "min limit",
+            "key": "min_limit",
+            "value": 1,
+            "_id": {
+              "$oid": "6640a2090c82e4b0ecba58cb"
+            }
+          },
+          {
+            "label": "max limit",
+            "key": "max_limit",
+            "value": 100,
+            "_id": {
+              "$oid": "6640a2090c82e4b0ecba58cc"
+            }
+          }
+        ],
+        "options": []
+      },
+      "questionText": "What is your age?",
+      "_id": {
+        "$oid": "6640da252f25db5929af5711"
+      }
+    },
+    {
+      "questionMetaData": {
+        "answerType": "mcq",
+        "buttonType": "checkbox",
+        "is_required": true,
+        "options": [
+          "malaria",
+          "typhoid",
+          "lung cancer",
+          "cholera",
+          "surgery"
+        ],
+        "validation": []
+      },
+      "questionText": "Have you diagnosed with any of following diseases?",
+      "_id": {
+        "$oid": "6640da252f25db5929af5712"
+      }
+    },
+    {
+      "questionMetaData": {
+        "answerType": "description",
+        "dataType": "Number",
+        "is_required": true,
+        "validation": [
+          {
+            "label": "is phone number",
+            "key": "is_phone_field",
+            "value": 1,
+            "_id": {
+              "$oid": "6640a2090c82e4b0ecba58cd"
+            }
+          }
+        ],
+        "options": []
+      },
+      "questionText": "What is your phone number?",
+      "_id": {
+        "$oid": "6640da252f25db5929af5713"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2024-05-12T15:03:01.752Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T15:03:01.752Z"
+  },
+  "__v": 0
+}]

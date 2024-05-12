@@ -8,7 +8,7 @@ router.post('/create-questionnaire', auth.adminAuth, validation.createQuestionna
 router.post('/create-field-meta-data', auth.adminAuth, validation.createFieldMetaDataSchema, questionnaireController.createFieldMetaData)
 router.get('/get-field-meta-data', auth.adminAuth, questionnaireController.getFieldMetaData)
 router.get('/get-questionnaire', auth.userAuth, questionnaireController.getQuestionnaire)
-router.post('/submit-questionnaire', auth.userAuth, questionnaireController.submitQuestionnaire)
+router.post('/submit-questionnaire', auth.userAuth, validation.submitQuestionnaireSchema, questionnaireController.submitQuestionnaire)
 router.post('/get-analytics', auth.adminAuth, validation.getAnalytics, questionnaireController.getAnalytics)
 
 module.exports = router

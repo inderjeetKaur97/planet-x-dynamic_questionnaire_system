@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "6640be60b1e1d7024643f911"
+  },
+  "questionnaireId": {
+    "$oid": "6640baf6307a70f2e85c92b3"
+  },
+  "viewedBy": {
+    "$oid": "66407472a55dbb8a3220a421"
+  },
+  "isSubmitted": true,
+  "updatedAt": {
+    "$date": "2024-05-12T13:04:32.770Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T13:04:32.771Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6640beba443b189de5543ab5"
+  },
+  "questionnaireId": {
+    "$oid": "6640baf6307a70f2e85c92b3"
+  },
+  "viewedBy": {
+    "$oid": "66407472a55dbb8a3220a421"
+  },
+  "isSubmitted": false,
+  "updatedAt": {
+    "$date": "2024-05-12T13:06:02.558Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T13:06:02.558Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6640d6222f25db5929af56ec"
+  },
+  "questionnaireId": {
+    "$oid": "6640baf6307a70f2e85c92b3"
+  },
+  "viewedBy": {
+    "$oid": "6640d58f88ebbe2695aedfbb"
+  },
+  "isSubmitted": true,
+  "updatedAt": {
+    "$date": "2024-05-12T14:45:54.252Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T14:45:54.252Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6640d9922f25db5929af5705"
+  },
+  "questionnaireId": {
+    "$oid": "6640baf6307a70f2e85c92b3"
+  },
+  "viewedBy": {
+    "$oid": "6640d58f88ebbe2695aedfbb"
+  },
+  "isSubmitted": true,
+  "updatedAt": {
+    "$date": "2024-05-12T15:00:34.352Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T15:00:34.352Z"
+  },
+  "__v": 0
+}]

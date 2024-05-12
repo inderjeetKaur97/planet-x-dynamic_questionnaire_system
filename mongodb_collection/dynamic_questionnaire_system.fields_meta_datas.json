@@ -1,0 +1,228 @@
+[{
+  "_id": {
+    "$oid": "66408d82377d5020fde44a93"
+  },
+  "type": "answerType",
+  "validation": [
+    {
+      "label": "description",
+      "key": "description",
+      "_id": {
+        "$oid": "66408dbfe5ac2bf844fe2ff7"
+      }
+    },
+    {
+      "label": "multiple choice",
+      "key": "mcq",
+      "_id": {
+        "$oid": "66408dbfe5ac2bf844fe2ff8"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2024-05-12T09:36:02.611Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T09:36:02.611Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66409f9035dda82af83d974b"
+  },
+  "type": "description",
+  "validation": [
+    {
+      "label": "characters only",
+      "key": "string",
+      "dataType": "String",
+      "_id": {
+        "$oid": "66409f9035dda82af83d974c"
+      }
+    },
+    {
+      "label": "numbers only",
+      "key": "number",
+      "dataType": "Number",
+      "_id": {
+        "$oid": "66409f9035dda82af83d974d"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2024-05-12T10:53:04.660Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T10:53:04.660Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6640a0b12bbee2211b997d54"
+  },
+  "type": "mcq",
+  "validation": [
+    {
+      "label": "allow single selection",
+      "key": "radio",
+      "buttonType": "radio",
+      "_id": {
+        "$oid": "6640a0b12bbee2211b997d55"
+      }
+    },
+    {
+      "label": "allow multiple selection",
+      "key": "checkbox",
+      "buttonType": "checkbox",
+      "_id": {
+        "$oid": "6640a0b12bbee2211b997d56"
+      }
+    }
+  ],
+  "minOptionsCount": 2,
+  "updatedAt": {
+    "$date": "2024-05-12T10:57:53.675Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T10:57:53.675Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6640a1890c82e4b0ecba58c4"
+  },
+  "type": "string",
+  "validation": [
+    {
+      "label": "min characters",
+      "key": "min_length",
+      "_id": {
+        "$oid": "6640a1890c82e4b0ecba58c5"
+      }
+    },
+    {
+      "label": "max characters",
+      "key": "max_length",
+      "_id": {
+        "$oid": "6640a1890c82e4b0ecba58c6"
+      }
+    },
+    {
+      "label": "is email field",
+      "key": "is_email_field",
+      "_id": {
+        "$oid": "6640a1890c82e4b0ecba58c7"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2024-05-12T11:01:29.191Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T11:01:29.191Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6640a2090c82e4b0ecba58ca"
+  },
+  "type": "number",
+  "validation": [
+    {
+      "label": "min limit",
+      "key": "min_limit",
+      "_id": {
+        "$oid": "6640a2090c82e4b0ecba58cb"
+      }
+    },
+    {
+      "label": "max limit",
+      "key": "max_limit",
+      "_id": {
+        "$oid": "6640a2090c82e4b0ecba58cc"
+      }
+    },
+    {
+      "label": "is phone number",
+      "key": "is_phone_field",
+      "_id": {
+        "$oid": "6640a2090c82e4b0ecba58cd"
+      }
+    },
+    {
+      "label": "are decimal values allowed",
+      "key": "is_decimal_allowed",
+      "_id": {
+        "$oid": "6640a2090c82e4b0ecba58ce"
+      }
+    },
+    {
+      "label": "are negative values allowed",
+      "key": "are_negative_allowed",
+      "_id": {
+        "$oid": "6640a2090c82e4b0ecba58cf"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2024-05-12T11:03:37.864Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T11:03:37.864Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6640da3a2f25db5929af5716"
+  },
+  "type": "number",
+  "validation": [
+    {
+      "label": "min limit",
+      "key": "min_limit",
+      "_id": {
+        "$oid": "6640da3a2f25db5929af5717"
+      }
+    },
+    {
+      "label": "max limit",
+      "key": "max_limit",
+      "_id": {
+        "$oid": "6640da3a2f25db5929af5718"
+      }
+    },
+    {
+      "label": "is phone number",
+      "key": "is_phone_field",
+      "_id": {
+        "$oid": "6640da3a2f25db5929af5719"
+      }
+    },
+    {
+      "label": "are decimal values allowed",
+      "key": "is_decimal_allowed",
+      "_id": {
+        "$oid": "6640da3a2f25db5929af571a"
+      }
+    },
+    {
+      "label": "are negative values allowed",
+      "key": "are_negative_allowed",
+      "_id": {
+        "$oid": "6640da3a2f25db5929af571b"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2024-05-12T15:03:22.469Z"
+  },
+  "createdAt": {
+    "$date": "2024-05-12T15:03:22.469Z"
+  },
+  "__v": 0
+}]

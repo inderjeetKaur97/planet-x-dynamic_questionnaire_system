@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "6640bd2c447d8c2a75ab9bc7"
+  },
+  "questionnaireId": {
+    "$oid": "6640baf6307a70f2e85c92b3"
+  },
+  "userId": {
+    "$oid": "66407472a55dbb8a3220a421"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2024-05-12T12:59:24.617Z"
+  },
+  "questionnaireData": "[{\"questionText\":\"What is your name?\",\"answerText\":[\"Inderjeet kaur\"]},{\"questionText\":\"What is your class?\",\"answerText\":[12]},{\"questionText\":\"What are your subjects?\",\"answerText\":[\"Hindi\",\"Maths\",\"English\"]},{\"questionText\":\"What is your parents phone number?\",\"answerText\":[8523698569]}]",
+  "updatedAt": {
+    "$date": "2024-05-12T12:59:24.617Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640d5d9447d8c2a75abae4a"
+  },
+  "questionnaireId": {
+    "$oid": "6640baf6307a70f2e85c92b3"
+  },
+  "userId": {
+    "$oid": "6640d58f88ebbe2695aedfbb"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2024-05-12T14:44:41.866Z"
+  },
+  "questionnaireData": "[{\"questionText\":\"What is your name?\",\"answerText\":[\"ramesh kumar\"]},{\"questionText\":\"What is your class?\",\"answerText\":[10]},{\"questionText\":\"What are your subjects?\",\"answerText\":[\"Sanskrit\",\"Maths\",\"German\",\"Hindi\"]},{\"questionText\":\"What is your parents phone number?\",\"answerText\":[4561258963]}]",
+  "updatedAt": {
+    "$date": "2024-05-12T14:44:41.866Z"
+  }
+}]
