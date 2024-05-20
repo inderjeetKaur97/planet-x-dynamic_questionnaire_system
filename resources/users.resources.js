@@ -26,7 +26,46 @@ const findUserByEmail = async (email) => {
     return false
   }
 }
+const findUserById = async (userId) => {
+  console.log("userResource@findUserById")
+  try {
+    let userFound = await UserSchema.findOne({ _id:userId })
+    if (userFound)
+      return { ...userFound._doc }
+    return false
+  } catch (error) {
+    console.log("userResource@findUserById", error)
+    return false
+  }
+}
+const deleteUserById = async (userId) => {
+  console.log("userResource@deleteUserById")
+  try {
+    let userDeleted = await UserSchema.deleteOne({ _id:userId })
+    if (userDeleted)
+      return userDeleted
+    return false
+  } catch (error) {
+    console.log("userResource@deleteUserById", error)
+    return false
+  }
+}
+const updateUserById = async (userId,params) => {
+  console.log("userResource@updateUserById")
+  try {
+    let userUpdated=await UserSchema.updateOne({ _id:userId },params)
+    if (userUpdated)
+      return userUpdated
+    return false
+  } catch (error) {
+    console.log("userResource@updateUserById", error)
+    return false
+  }
+}
 module.exports = {
   createUser,
-  findUserByEmail
+  findUserByEmail,
+  findUserById,
+  deleteUserById,
+  updateUserById
 }

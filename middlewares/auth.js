@@ -13,8 +13,11 @@ const adminAuth = async (req, res, next) => {
     let userFound = await userResources.findUserByEmail(decoded.email)
     if (!userFound)
       return ResponseHandler.unauthorized(res, null);
-    if (userFound.role !== "admin")
+    if (userFound.role !== "admin" && userFound.role !== "super_admin" )
       return ResponseHandler.unauthorized(res, null);
+    if(!userFound.isActive)
+      return ResponseHandler.unauthorized(res, null,"You are an inactive user, hence are not authorised.");
+    req.admin = decoded
     return next()
   } catch (error) {
     console.log("middlewares@adminAuth", error)
